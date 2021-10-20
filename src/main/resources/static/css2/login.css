@@ -1,0 +1,24 @@
+
+  * {
+    margin: 0px; padding: 0px;
+  }
+  span {
+    width: 70px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  #login {
+    position: absolute;
+    text-align: center;
+    line-height: middle;
+    width: 300px; height: 150px;
+    padding: 10px;
+  }
+  button {
+    width: 250px; height: 25px;
+    margin-top: 10px;
+  }
+  #login h1{
+    display: inline-block;
+  }

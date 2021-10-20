@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:blotck th:replace="~{/layout/base :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+        <fieldset>
+            <div id="login">
+                <h1>로그인</h1><br>
+                <form class="" action="index.html" method="post" name="frm">
+                    <span>아이디</span><input type="text" id="id"><br>
+                    <span>비밀번호</span><input type="text" id="pw"><br>
+                    <button type="button" name="button" id='btn' class="loginbtn">로그인</button>
+                </form>
+                <table class="table table-striped">
+                    <tbody>
+                    <tr>
+                        <td><a href="/oauth2/authorization/google"><img height="50px", width="300px" src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile27.uf.tistory.com%2Fimage%2F998689465C3D7D1217F053"></a></td>
+
+                    </tr>
+                    <tr>
+                        <td><a href="/oauth2/authorization/naver"><img height="50px", width="300px" src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile24.uf.tistory.com%2Fimage%2F99580C465C3D7D130CF754"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <script th:inline="javascript">
+                window.onload = function() {
+                  document.getElementById('btn').onclick = function() {
+                    log.info("button..................");
+                    id = document.getElementById('id').value;
+                    pw = document.getElementById('pw').value;
+                    if(id == undefined || id =='') {
+                      alert('아이디를 확인하세요')
+                      document.getElementById('id').focus();
+                      return;
+                    }
+                    if(pw == undefined || pw =='') {
+                      alert('비밀번호를 확인하세요')
+                      document.getElementById('pw').focus();
+                      return;
+                    }
+                    document.frm.submit();
+                  }
+                };
+<!--                $(document).ready(function() {-->
+<!--                    $(".loginbtn").click(function() {-->
+<!--                        alert("로그인");-->
+<!--                        console.log("login");-->
+<!--                    });-->
+<!--                });-->
+            </script>
+    </th:block>
+</th:blotck>
+</html>
